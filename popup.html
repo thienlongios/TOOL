@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="color-scheme" content="light">
+<title>Google AI Pro · Công cụ kích hoạt</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    width: 380px; margin: 0; padding: 18px 16px 14px;
+    font: 13px/1.55 -apple-system, "Segoe UI", Roboto, sans-serif;
+    color: #28354a; background: linear-gradient(150deg, #eef3ff 0, #f7f9fc 180px);
+  }
+  h1 { font-size: 16.5px; margin: 0 0 4px; font-weight: 700; letter-spacing: -.3px; color: #1d2c47; }
+  .sub { font-size: 11.5px; color: #69778d; margin-bottom: 14px; }
+  .box {
+    border: 1px solid #e2e8f2; border-radius: 14px; padding: 12px; margin-bottom: 12px;
+    background: #fff; box-shadow: 0 4px 16px #263b6410;
+  }
+  .lbl { font-size: 11px; font-weight: 600; color: #5a687f; margin: 0 2px 8px; }
+  label.row {
+    display: flex; align-items: center; gap: 10px; padding: 8px 10px;
+    border: 1px solid transparent; border-radius: 9px; cursor: pointer;
+    transition: background .15s, border-color .15s;
+  }
+  label.row + label.row { margin-top: 3px; }
+  label.row:hover { background: #f5f7fc; }
+  label.row:has(input:checked) { background: #edf3ff; border-color: #cddcff; color: #2457bd; font-weight: 500; }
+  label.row:has(input:focus-visible) { outline: 2px solid #507ce0; outline-offset: 2px; }
+  label.row input { margin: 0; width: 15px; height: 15px; accent-color: #416fdb; flex-shrink: 0; }
+  .t { flex: 1; }
+  .tag { font-size: 10px; line-height: 20px; padding: 0 7px; border-radius: 6px; color: #718096; background: #f0f3f8; font-weight: 600; }
+  label.row:has(input:checked) .tag { color: #2457bd; background: #dce8ff; }
+
+  /* Khu vực nút bấm lối tắt */
+  .grid-shortcuts {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 7px;
+  }
+  .btn-sc {
+    display: flex; align-items: center; justify-content: center; gap: 5px;
+    padding: 8px 6px; font-size: 11.5px; font-weight: 600; color: #2d4373;
+    background: #f3f6fc; border: 1px solid #dce5f5; border-radius: 8px;
+    cursor: pointer; transition: all .15s; text-align: center;
+  }
+  .btn-sc:hover { background: #e5edff; border-color: #b9ceff; color: #1b449c; }
+  .btn-sc:active { transform: scale(0.98); }
+  .btn-sc.primary { background: #2457bd; color: #fff; border-color: #2457bd; }
+  .btn-sc.primary:hover { background: #1c4599; }
+
+  #state { font-size: 11.5px; padding: 9px 12px; border-radius: 10px; background: #f1f4f8; border: 1px solid #e2e8f0; margin-bottom: 10px; }
+  #state.ok { background: #edf9f2; border-color: #ccebd9; color: #24744c; font-weight: 500; }
+  #state.warn { background: #fffaed; border-color: #f0e3bc; color: #886821; }
+  
+  ol { margin: 10px 0 0; padding-left: 20px; font-size: 11.5px; color: #57647a; }
+  ol li { margin: 4px 0; padding-left: 2px; }
+  ol li::marker { color: #8b9bb3; font-weight: 600; }
+  ol b { font-weight: 600; color: #2e3d52; }
+  .foot { margin-top: 12px; padding-top: 9px; border-top: 1px solid #e2e8f0; font-size: 10.5px; color: #7c899e; display: flex; justify-content: space-between; }
+  .foot a { color: #5674af; text-decoration: none; border-radius: 3px; }
+  .foot a:hover { color: #2457bd; text-decoration: underline; }
+  @media (prefers-reduced-motion: reduce) { label.row, .btn-sc { transition: none; } }
+</style>
+</head>
+<body>
+  <h1>Google AI Pro 2 Năm · Kích hoạt</h1>
+  <div class="sub">Đăng nhập tài khoản Google mục tiêu (Hồ sơ Mỹ - US) trước khi thao tác</div>
+
+  <!-- Lối tắt hồ sơ thanh toán & quản lý gói -->
+  <div class="box">
+    <div class="lbl">Lối tắt Google Payments & Thuê bao</div>
+    <div class="grid-shortcuts">
+      <button class="btn-sc primary" data-url="https://one.google.com/plans">🚀 Mở gói Google One</button>
+      <button class="btn-sc" data-url="https://payments.google.com/gp/w/u/0/home/paymentmethods">💳 Thêm thẻ thanh toán</button>
+      <button class="btn-sc" data-url="https://payments.google.com/gp/w/u/0/home/settings">⚙️ Thay đổi hồ sơ / Quốc gia</button>
+      <button class="btn-sc" data-url="https://play.google.com/store/account/subscriptions">🔄 Quản lý / Hủy gia hạn</button>
+    </div>
+  </div>
+
+  <!-- Chọn tầng ưu đãi -->
+  <div class="box">
+    <div class="lbl">Chọn tầng ưu đãi (Tự động lưu, hãy tải lại trang sau khi chọn)</div>
+    <label class="row"><input type="radio" name="layer" value="off"><span class="t">Tắt kích hoạt</span></label>
+    <label class="row"><input type="radio" name="layer" value="12m"><span class="t">Tầng 1 · Gói 12 Tháng</span><span class="tag">Đăng ký đầu</span></label>
+    <label class="row"><input type="radio" name="layer" value="6m_ss"><span class="t">Tầng 2 · Gói 6 Tháng (SS)</span><span class="tag">Cộng dồn</span></label>
+    <label class="row"><input type="radio" name="layer" value="6m"><span class="t">Tầng 3 · Gói 6 Tháng</span><span class="tag">Cộng dồn</span></label>
+    <label class="row"><input type="radio" name="layer" value="6m_2"><span class="t">Dự phòng · Gói 6 Tháng (Phụ)</span><span class="tag">Thay thế</span></label>
+  </div>
+
+  <div id="state" class="warn" role="status" aria-live="polite">Chưa phát hiện trang mục tiêu</div>
+
+  <ol>
+    <li>Mở <b>one.google.com/plans</b>, kiểm tra đúng tài khoản Google cần nâng cấp.</li>
+    <li>Chọn tầng ưu đãi ở trên → Tải lại trang (F5) → Góc dưới bên phải hiện <b>"Đã gắn mã kích hoạt"</b>.</li>
+    <li>Bấm nút <b>Get discount (Nhận ưu đãi)</b> trên thẻ AI Pro để mở khung thanh toán Google Play.</li>
+    <li>Nhìn thanh trạng thái trên cùng khung thanh toán: <b>Màu xanh = Miễn phí (An toàn)</b>, Màu đỏ = Không bấm.</li>
+    <li>Thêm thẻ (Mã bưu chính Mỹ miễn thuế: <b>97201</b>) → Xác nhận số tiền <b>$0.00</b> → Bấm Đăng ký.</li>
+    <li>Để cộng dồn tầng tiếp theo: Mở lại tiện ích chọn tầng mới → Tải lại trang → Bấm nhận ưu đãi tiếp.</li>
+    <li>Sau khi hoàn tất toàn bộ 2 năm, bấm vào nút <b>Quản lý / Hủy gia hạn</b> ở trên để hủy tự động trừ tiền khi hết hạn.</li>
+  </ol>
+
+  <div class="foot"><span>Công cụ nội bộ</span><a href="https://t.me/pk_oa" target="_blank">t.me/pk_oa</a></div>
+  <script src="popup.js"></script>
+</body>
+</html>
